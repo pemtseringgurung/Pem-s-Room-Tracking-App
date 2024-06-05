@@ -52,7 +52,7 @@ function App() {
   }, [roomNames.length]);
 
   useEffect(() => {
-    const interval = setInterval(resetClickCounts, 24 * 60 * 60 * 1000); // Reset counts every 24 hours
+    const interval = setInterval(resetClickCounts, 24 * 60 * 60 * 1000); 
     return () => clearInterval(interval);
   }, [roomNames, resetClickCounts]);
 
@@ -60,7 +60,7 @@ function App() {
     if (clickCounts[index] < notificationFrequency) {
       setCurrentRoom(index);
       setModalIsOpen(true);
-      setIsAskingReason(false); // Ensure we start with the correct state
+      setIsAskingReason(false); 
     } else {
       alert('You have reached the maximum number of updates for this room today.');
     }
